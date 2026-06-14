@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Despacho presidencial</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 <body>
 <div class="loginform">
@@ -14,20 +15,28 @@
         </div>
         <div class="formcontainer">
             <h1>Iniciar Sesion</h1>
-            <form>
+            <form id="loginForm">
                 <div class="form-group">
                     <label for="username">DNI</label>
-                    <input type="text" id="username" name="username" placeholder="8 digitos" required>
+                    <input type="text" id="username" name="username" maxlength="8" required >
+                    <small id="errorLoginDNI"></small>
                 </div>
                 <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" placeholder="Entre su password" required>
-                </div>
+                        <label for="crearContraseña">Crea tu contraseña</label>
+                        <div class="password-container">
+                        <input type="password" id="contrasenaLogin" maxlength="6" required>
+                        <i class="fa-solid fa-eye" id="ojoLogin"></i>
+                        </div>
+                <small id="errorLoginConstrasena"></small>
+            </div>
                 <button type="submit">Login</button>
                 
                 <p class="signup-link">¿No tiene cuenta? <a href="../html/Registro.html">Registrarse</a></p>
             </form>
         </div>
     </div>
+    <script src="../javacript.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../Erro2.js"></script>
 </body>
 </html>
