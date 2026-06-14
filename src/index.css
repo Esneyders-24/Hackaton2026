@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+/* 1. REGISTRAMOS TODOS LOS COLORES Y SOMBRAS INSTITUCIONALES DEL PROYECTO */
+@theme {
+  --color-gov-red: #D91319;          /* Rojo institucional */
+  --color-gov-red-light: #E53935;    /* Rojo claro para el hover */
+  --color-gov-blue: #1A2C45;         /* Azul oscuro del Estado */
+  --color-gov-blue-light: #2A4365;   /* Azul claro */
+  --color-gov-gray-bg: #F4F6F9;      /* Gris de fondo de la página */
+  --color-gov-gray-border: #D1D5DB;  /* Gris para bordes de inputs */
+  
+  --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+/* 2. ESTILOS BASE PARA EL CUERPO DE LA PÁGINA */
+@utility base-body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: var(--color-gov-gray-bg);
+  color: var(--color-gov-blue);
+}
+
+/* Aplicamos el estilo base directamente al body */
+body {
+  @apply base-body;
+}
+
+/* 3. CLASES REUTILIZABLES (COMPONENTES) */
+@utility btn-primary {
+  @apply bg-gov-red hover:bg-gov-red-light text-white font-semibold py-2.5 px-6 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-gov-red focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed;
+}
+
+@utility btn-secondary {
+  @apply bg-white hover:bg-gov-gray-bg text-gov-blue border border-gov-blue font-semibold py-2.5 px-6 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-gov-blue focus:ring-offset-2;
+}
+
+@utility btn-ghost {
+  @apply text-gov-blue hover:text-gov-blue-light underline font-medium transition-colors duration-200;
+}
+
+@utility input-field {
+  @apply w-full border border-gov-gray-border rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gov-blue focus:border-gov-blue transition-all duration-200 bg-white;
+}
+
+@utility card {
+  @apply bg-white rounded-2xl shadow-card p-6 md:p-8;
+}
+
+@utility badge-estado {
+  @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide;
+}
