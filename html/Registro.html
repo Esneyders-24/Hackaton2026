@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Despacho presidencial</title>
     <link rel="stylesheet" href="../css/registro.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    
 </head>
 <body>
      <div class="Registro">
@@ -14,19 +16,43 @@
             </div>
             <div class="registrocontainer">
                 <h1>Registro</h1>
-                <form >
+                <form id="registroForm" >
                     <div class="registro-group">
-                        <label for="DNi">Ingrese su DNI</label>
-                        <input type="text" id="DNI" name="DNI" placeholder="8 digitos" required>
+                        <label for="DNi">Nombres y Apellidos</label>
+                        <input type="text" id="NyA" name="Nombre_y_Apellido"   pattern="^[a-zA-Z\s]+$" required>
                     </div>
                     <div class="registro-group">
-                        <label for="crearContraseña" >Crea tu contrseña</label>
-                        <input type="password" id="contrseña" name="contrseña" placeholder="Cracteristicas diferente" required>
+                        <label for="DNi">Ingrese su DNI</label>
+                        <input type="text" id="DNI" name="DNI"   pattern="^.{0,8}$" required>
+                        <small id="errorDNI"></small>
+                   </div>
+                    <div class="registro-group">
+                        <label for="DNi">Correo Electronico</label>
+                        <input type="text" id="correoelectronico" name="correoelectronico"  pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" required>
+                        <small  id="errorCorreo"></small>
+                    </div>
+                     <div class="registro-group">
+                        <label for="DNi">Numero de Celular</label>
+                        <input type="text" id="NumeroCelular" name="NumeroCelular"   pattern="^9\d{8}$" required>
+                        <small id="errorCelular"></small>
+                    </div>
+                    <div class="registro-group">
+                        <label for="crearContraseña">Crea tu contraseña</label>
+                        <div class="password-container">
+                        <input type="password" id="contrasena" maxlength="6" required>
+                        <i class="fa-solid fa-eye" id="ojo"></i>
+                        </div>
+                <small id="errorContrasena"></small>
                     </div>
                     <a href="/html/index.html"></a>
                     <button type="submit">Listo</button>
+                    <a href="index.html" class="btn-regresar">Regresar</a>
                 </form>
             </div>
+             
      </div>
+     <script src="../Registro.js"></script>
+     <script src="../Error.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html> 
