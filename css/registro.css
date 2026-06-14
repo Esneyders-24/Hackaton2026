@@ -5,19 +5,23 @@
 }
 
 body{
- font-family: Arial, sans-serif;
- background-image: url(../img/FondoP.png);
- display: flex;
- justify-content: center;
- align-items: center;
- height: 100vh;
- width: 100vw;
+    font-family: Arial, sans-serif;
+    background-image: url(../img/FondoP.png);
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+    margin: 0;
 }
 
 .Registro{
     display: flex;
     width: 800px;
-    height: 500px;
+    height: 550px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     overflow: hidden;
@@ -47,6 +51,8 @@ body{
     margin-bottom: 20px;
     font-size: 24px;
     color: #333;
+    text-align: center;
+    margin-top: -10px;
 }
 
 .Registro .registrocontainer .registro-group{
@@ -112,3 +118,54 @@ body{
     }
 }
 
+/*REGISTRO EXITOSO*/
+.mensaje-exito{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.mensaje-exito i{
+    font-size: 100px;
+    color: green;
+}
+
+.mensaje-exito h2{
+    color: green;
+    margin-top: 10px;
+}
+
+/*Ojos*/
+.password-container{
+    position: relative;
+}
+
+.password-container input{
+    width: 100%;
+    padding-right: 40px;
+}
+
+.password-container i{
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #666;
+}
+
+/*Boton de regreso*/
+.btn-regresar{
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #bf0909;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+.btn-regresar:hover{
+    background-color: #6a0a0a;
+}
